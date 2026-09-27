@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLUD Smakensa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="nav-shell">
+    <nav class="navbar">
+      <div class="navbar-deco-shell" aria-hidden="true">
+        <img src="images/Group 145.png" alt="" class="navbar-deco-corner">
+        <img src="images/Group 145.png" alt="" class="navbar-deco-brand">
+      </div>
+
+      <div class="brand">
+        <div class="brand-badge">
+          <img src="images/Logo_Smea_PNG_Fiks.png" alt="Logo BLUD Smakensa" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <div class="b1">BLUD</div>
+          <div class="b2">SMAKENSA</div>
+        </div>
+      </div>
+      <div class="navlinks" id="navlinks">
+        <a href="#beranda" class="active">Beranda</a>
+        <a href="#produk">Produk &amp; Jasa</a>
+        <a href="#profil">Profil</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+
+  <section class="hero" id="beranda">
+    <div class="wrap hero-grid">
+      <div class="hero-art reveal delay-1">
+        <img src="images/Group_144.png" alt="Ilustrasi BLUD Smakensa">
+      </div>
+      <div class="hero-copy reveal">
+        <h1>Selamat Datang di<span class="accent">BLUD Smakensa</span></h1>
+        <div class="eyebrow">Menyala Mendunia</div>
+        <p>Website Promosi Produk Unggulan Sekolah adalah platform digital atau portal web resmi yang dikelola oleh
+          SMK/lembaga pendidikan berstatus Badan Layanan Umum Daerah (BLUD) yang berfungsi sebagai etalase digital serta
+          sarana pemasaran untuk mengenalkan dan menjual produk barang atau jasa hasil karya siswa dan guru kepada
+          masyarakat umum, dunia usaha/industri, maupun instansi pemerintah.</p>
+      </div>
+    </div>
+    <div class="hero-deco-wrap">
+      <img src="images/Group 145.png" alt="" class="hero-deco-circles">
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Mengapa BLUD Smakensa?</h2>
+      </div>
+      <div class="grid-mengapa">
+        <div class="kartu-mengapa reveal delay-1">
+          <div class="ikon-mengapa">
+            <img src="images/chart-bar.png" alt="">
+          </div>
+          <h3>Solusi Terpadu Satu Pintu</h3>
+          <p>Mengintegrasikan 8 jurusan unggulan. Klien dapat menyelesaikan kebutuhan IT (RPL/TKJ), branding &amp; media
+            (DKV/PSPTV), pemasaran (BD), hingga administrasi &amp; keuangan (AKL/LP/MP) di satu tempat.</p>
+        </div>
+        <div class="kartu-mengapa reveal delay-2">
+          <div class="ikon-mengapa">
+            <img src="images/thinking-high.png" alt="">
+          </div>
+          <h3>Inovasi dan Kreativitas</h3>
+          <p>Menerapkan teknologi terkini, tren desain modern, dan strategi pemasaran digital. Menghasilkan produk dan
+            jasa unik yang relevan dengan kebutuhan pasar saat ini.</p>
+        </div>
+        <div class="kartu-mengapa reveal delay-3">
+          <div class="ikon-mengapa">
+            <img src="images/building.png" alt="">
+          </div>
+          <h3>Sumber Daya Sekolah</h3>
+          <p>Didukung laboratorium IT, studio broadcast &amp; DKV, serta peralatan jaringan modern berstandar industri.
+            Dikelola oleh talenta muda berbakat di bawah bimbingan praktisi profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="floating-cart-wrapper">
+    <img src="images/shopping-cart 1.png" alt="" class="floating-cart-deco">
+  </div>
+
+  <section class="products" id="produk">
+    <div class="wrap">
+      <div class="products-top reveal">
+        <h2>Produk &amp; Jasa Unggulan</h2>
+      </div>
+      <div class="products-slider reveal">
+        <div class="slider-fade slider-fade-left" id="productsFadeLeft" aria-hidden="true"></div>
+        <div class="slider-fade slider-fade-right is-visible" id="productsFadeRight" aria-hidden="true"></div>
+
+        <button type="button" class="products-nav products-prev" id="productsPrev" aria-label="Kartu sebelumnya"
+          disabled>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 19l-7-7 7-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div class="products-viewport">
+          <div class="products-row" id="productsRow">
+            <div class="product-card">
+              <div class="product-media">
+                <img src="images/produk-1.png" alt="Pengembangan Web dan Aplikasi">
+              </div>
+              <div class="product-body">
+                <h3>Pengembangan Web &amp; Aplikasi</h3>
+                <p>Pengembangan website profil, sistem informasi sekolah, dan aplikasi berbasis web modern sesuai
+                  kebutuhan industri.</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-media">
+                <img src="images/produk-2.png" alt="Branding dan Desain Komunikasi Visual">
+              </div>
+              <div class="product-body">
+                <h3>Branding &amp; Desain Komunikasi Visual</h3>
+                <p>Layanan desain logo, identitas merek, merchandise, sablon, dan materi promosi kreatif untuk UMKM dan
+                  perusahaan.</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-media">
+                <img src="images/produk-3.png" alt="Produksi Video dan Broadcast Live Streaming">
+              </div>
+              <div class="product-body">
+                <h3>Produksi Video &amp; Live Streaming</h3>
+                <p>Jasa video profil institusi, peliputan event, dokumentasi, podcast, dan broadcast live streaming
+                  berkualitas tinggi.</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-media">
+                <img src="images/produk-1.png" alt="Instalasi Jaringan dan IT Support">
+              </div>
+              <div class="product-body">
+                <h3>Instalasi Jaringan &amp; IT Support</h3>
+                <p>Pemasangan infrastruktur jaringan komputer, fiber optic, konfigurasi server, mikrotik, dan
+                  maintenance perangkat IT.</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-media">
+                <img src="images/produk-2.png" alt="Pemasaran Digital dan Konten Kreatif">
+              </div>
+              <div class="product-body">
+                <h3>Pemasaran Digital &amp; Konten Kreatif</h3>
+                <p>Strategi digital marketing, pengelolaan media sosial, pembuatan konten promosi, dan optimasi etalase
+                  digital e-commerce.</p>
+              </div>
+            </div>
+            <div class="product-card">
+              <div class="product-media">
+                <img src="images/produk-3.png" alt="Jasa Administrasi dan Pembukuan">
+              </div>
+              <div class="product-body">
+                <h3>Jasa Administrasi &amp; Pembukuan</h3>
+                <p>Layanan pembukuan keuangan, administrasi perpajakan, rekonsiliasi kas, dan penyusunan laporan
+                  keuangan terstandar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="products-nav products-next is-visible" id="productsNext"
+          aria-label="Kartu berikutnya">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 5l7 7-7 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats reveal">
+    <div class="wrap">
+      <h2>Statistik</h2>
+      <hr class="stats-hr">
+      <div class="stats-grid">
+        <div class="stats-col">
+          <div class="stat-box stat-white">
+            <img src="images/users-group 3.png" alt="" class="stat-icon-img">
+            <div class="stat-text">
+              <div class="stat-num">100</div>
+              <div class="stat-label">Jumlah Client</div>
+            </div>
+          </div>
+          <div class="stat-box stat-orange">
+            <img src="images/list-check 1.png" alt="" class="stat-icon-img">
+            <div class="stat-text">
+              <div class="stat-num">53</div>
+              <div class="stat-label">Produk &amp; Jasa</div>
+            </div>
+          </div>
+        </div>
+        <div class="stats-col">
+          <div class="stat-box stat-orange">
+            <img src="images/user-check 1.png" alt="" class="stat-icon-img">
+            <div class="stat-text">
+              <div class="stat-num">100</div>
+              <div class="stat-label">Siswa Terlibat</div>
+            </div>
+          </div>
+          <div class="stat-box stat-white">
+            <img src="images/chart-dots-3 1.png" alt="" class="stat-icon-img">
+            <div class="stat-text">
+              <div class="stat-num">8</div>
+              <div class="stat-label">Jurusan</div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-box stat-orange big">
+          <img src="images/graph 1.png" alt="" class="stat-icon-img-big">
+          <div class="stat-text">
+            <div class="stat-num">100</div>
+            <div class="stat-label">Project</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="school-name-section" id="profil">
+    <div class="school-name-wrap">
+      <div class="school-deco deco-trolley" aria-hidden="true">
+        <img src="images/trolley_160dp_FF8C00_FILL0_wght400_GRAD0_opsz48 1.png" alt="">
+      </div>
+      <div class="school-deco deco-watch" aria-hidden="true">
+        <img src="images/watch_screentime_160dp_FF8C00_FILL0_wght400_GRAD0_opsz48 1.png" alt="">
+      </div>
+      <div class="school-name reveal">
+        <h2>BLUD SMK NEGERI 1<br>BONDOWOSO</h2>
+      </div>
+      <div class="school-deco deco-package" aria-hidden="true">
+        <img src="images/package_2_160dp_FF8C00_FILL0_wght400_GRAD0_opsz48 1.png" alt="">
+      </div>
+      <div class="school-deco deco-box" aria-hidden="true">
+        <img src="images/box_160dp_FF8C00_FILL0_wght400_GRAD0_opsz48 1.png" alt="">
+      </div>
+    </div>
+    <div class="school-curve" aria-hidden="true">
+      <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path d="M 0,25 C 240,40 380,140 550,140 C 750,140 1100,70 1440,15 L 1440,185 C 1000,160 500,160 0,190 Z"
+          fill="var(--secondary)" />
+      </svg>
+    </div>
+  </section>
+
+  <section class="visi-section">
+    <div class="wrap visi-wrap">
+      <img src="images/Group 89.png" alt="" class="visi-burst burst-left">
+      <div class="visi-content reveal">
+        <h2>VISI</h2>
+        <p>Menghasilkan peserta didik yang unggul, berkarakter, kompeten dan berwawasan lingkungan.</p>
+        <div class="visi-star">
+          <img src="images/Star 3.png" alt="Bintang Visi">
+        </div>
+      </div>
+      <img src="images/Group 89.png" alt="" class="visi-burst burst-right">
+    </div>
+    <div class="wave-container wave-bot-container">
+      <svg class="wave-svg" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+        <path
+          d="M 0,120 C 350,140 700,160 1050,130 C 1220,110 1350,70 1440,20 L 1440,90 C 1350,140 1220,170 1050,175 C 700,185 350,165 0,170 Z"
+          fill="var(--secondary)"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="pencapaian">
+    <div class="wrap">
+      <div class="judul-ikon reveal">
+        <img src="images/trophy 1.png" alt="" class="ikon-judul ikon-kiri">
+        <h2>PENCAPAIAN</h2>
+        <img src="images/trophy 1.png" alt="" class="ikon-judul ikon-kanan">
+      </div>
+      <div class="grid-capai">
+
+        <div class="kartu-capai reveal delay-1">
+          <div class="info-capai">
+            <h4>Jurusan Bisnis Digital Menjalin kerjasama dengan Alfamart</h4>
+            <span class="tag-capai" style="background:#E23B2E;">BD</span>
+          </div>
+          <div class="media-capai" style="background:linear-gradient(160deg,#EE1C25,#B71C1C 55%,#F5C518);">
+            <img src="images/bd-removebg-preview(1).png" alt="Alfamart" onerror="this.style.display='none';">
+          </div>
+        </div>
+
+        <div class="kartu-capai reveal delay-2">
+          <div class="info-capai">
+            <h4>Jurusan Produksi Siaran Program Televisi Menjalin Kerja sama dengan MetroTV</h4>
+            <span class="tag-capai" style="background:#1D5FBF;">PspTv</span>
+          </div>
+          <div class="media-capai" style="background:linear-gradient(160deg,#EAF3FC,#9EC4EA 50%,#F0C14B);">
+            <img src="images/psptv-removebg-preview.png" alt="MetroTV" onerror="this.style.display='none';">
+          </div>
+        </div>
+
+        <div class="kartu-capai reveal delay-1">
+          <div class="info-capai">
+            <h4>Jurusan Layanan Perbankan Menjalin Kerjasama dengan Bank Jawa Timur</h4>
+            <span class="tag-capai" style="background:#2E9E4A;">LP</span>
+          </div>
+          <div class="media-capai" style="background:linear-gradient(160deg,#FFFFFF,#FFD6D6 55%,#C8102E);">
+            <img src="images/lp-removebg-preview.png" alt="Bank Jawa Timur" onerror="this.style.display='none';">
+          </div>
+        </div>
+
+        <div class="kartu-capai reveal delay-2">
+          <div class="info-capai">
+            <h4>Jurusan Rekayasa Perangkat Lunak menjalin kerjasama dengan PT. UBIG</h4>
+            <span class="tag-capai" style="background:#9016ae;">RPL</span>
+          </div>
+          <div class="media-capai" style="background:linear-gradient(160deg,#FFFFFF,#FFD0D0 50%,#C4161C);">
+            <img src="images/rpl-removebg-preview.png" alt="PT. UBIG" onerror="this.style.display='none';">
+          </div>
+        </div>
+
+        <div class="kartu-capai reveal delay-1">
+          <div class="info-capai">
+            <h4>Jurusan Akuntansi Menjalin Kerja Sama dengan PT Cipta Sarana Cendekia Malang</h4>
+            <span class="tag-capai" style="background:#2E9E4A;">AKL</span>
+          </div>
+          <div class="media-capai" style="background:linear-gradient(135deg,#7EC8F2,#F4B942 45%,#8BC34A);">
+            <img src="images/akl-removebg-preview.png" alt="PT Cipta Sarana Cendekia Malang"
+              onerror="this.style.display='none';">
+          </div>
+        </div>
+
+        <div class="kartu-capai reveal delay-2">
+          <div class="info-capai">
+            <h4>Jurusan Desain Komunikasi Visual menjalani kerja sama dengan Soerabaja45</h4>
+            <span class="tag-capai" style="background:#ffb300;">DKV</span>
+          </div>
+          <div class="media-capai" style="background:linear-gradient(160deg,#050505,#1A1A28 60%,#2A1A3A);">
+            <img src="images/dkv-removebg-preview.png" alt="Soerabaja45" onerror="this.style.display='none';">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="judul-ikon kontak-title-wrap reveal">
+    <img src="images/celebration_160dp_FF8C00_FILL0_wght400_GRAD0_opsz48 1.png" alt="" class="ikon-judul ikon-kiri">
+    <h2>Kontak kami</h2>
+    <img src="images/celebration_160dp_FF8C00_FILL0_wght400_GRAD0_opsz48 1.png" alt="" class="ikon-judul ikon-kanan">
+  </div>
+
+  <section class="cta-banner reveal" id="kontak">
+    <div class="wrap cta-inner">
+      <a href="mailto:info@smkn1bondowoso.sch.id?subject=Pertanyaan%20BLUD%20SMKN%201%20Bondowoso" class="cta-icon-box" aria-label="Kirim email ke info@smkn1bondowoso.sch.id" title="Kirim email ke info@smkn1bondowoso.sch.id">
+        <img src="images/mail-opened 1.png" alt="Email SMKN 1 Bondowoso" class="cta-mail-img">
+      </a>
+      <a href="mailto:info@smkn1bondowoso.sch.id?subject=Pertanyaan%20BLUD%20SMKN%201%20Bondowoso" class="cta-card" title="Klik untuk mengirim email ke info@smkn1bondowoso.sch.id">
+        <h3>Butuh bantuan?<br>Hubungi kami!</h3>
+      </a>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="wrap">
+      <div class="judul-ikon form-title-wrap reveal">
+        <img src="images/Group 89.png" alt="" class="ikon-judul ikon-kiri">
+        <h2>Kami Siap Mendengar anda</h2>
+        <img src="images/Group 89.png" alt="" class="ikon-judul ikon-kanan">
+      </div>
+      <div class="form-wrap reveal delay-1">
+        <form class="form-card" id="contactForm" action="https://formsubmit.co/info@smkn1bondowoso.sch.id"
+          method="POST">
+          <input type="hidden" name="_subject" value="[BLUD Smakensa] Pesan baru dari Website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_replyto" id="replytoField" value="">
+          <input type="hidden" name="_autoresponse" value="Terima kasih atas pesan Anda ke BLUD SMKN 1 Bondowoso. Pesan Anda telah kami terima dan akan segera ditindaklanjuti oleh pihak sekolah.">
+          <input type="text" name="_honey" style="display:none">
+
+          <div class="field">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="name" required autocomplete="name" placeholder="Masukkan nama lengkap">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="contoh: nama@email.com">
+          </div>
+          <div class="field">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="message" required placeholder="Tuliskan pesan atau pertanyaan Anda untuk sekolah..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="btnSubmit">
+              <span class="btn-label">Kirim</span>
+              <img src="images/send (1) 1.png" alt="" class="btn-send-img">
+            </button>
+          </div>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="lokasi">
+    <div class="wrap">
+      <div class="judul-ikon lokasi-title-wrap reveal">
+        <img src="images/Group 123.png" alt="" class="ikon-judul ikon-kiri chevron-icon">
+        <h2>Lokasi SMK Negeri 1 Bondowoso</h2>
+        <img src="images/Group 124.png" alt="" class="ikon-judul ikon-kanan chevron-icon">
+      </div>
+      <p class="addr reveal delay-1">Jalan HOS. Cokroaminoto No. 110, Kademangan, Kabupaten Bondowoso, Provinsi Jawa
+        Timur – Indonesia</p>
+      <div class="map-box reveal delay-2">
+        <iframe
+          src="https://www.google.com/maps?q=SMK+Negeri+1+Bondowoso,+Jalan+HOS+Cokroaminoto+No.110,+Kademangan,+Bondowoso&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi SMK Negeri 1 Bondowoso">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-top reveal">
+      <div class="foot-badge">
+        <img src="images/Logo_Smea_PNG_Fiks.png" alt="Logo SMKN 1 Bondowoso">
+      </div>
+      <h3>SMKN 1 BONDOWOSO</h3>
+      <p>Sekolah Menengah Kejuruan · Bondowoso</p>
+    </div>
+
+    <div class="foot-grid reveal delay-1">
+      <div class="foot-col">
+        <h5>NAVIGASI</h5>
+        <a href="#beranda">Beranda</a>
+        <a href="#profil">Tentang Kami</a>
+        <a href="#produk">Jurusan</a>
+        <a href="#">Prestasi</a>
+        <a href="#">Berita</a>
+      </div>
+      <div class="foot-col">
+        <h5>KONTAK</h5>
+        <p>Jalan HOS. Cokroaminoto No.110, Kademangan, Kabupaten Bondowoso, Provinsi Jawa Timur – Indonesia</p>
+        <a href="tel:+62332431201">(0332) 431201</a>
+        <a href="mailto:info@smkn1bondowoso.sch.id">info@smkn1bondowoso.sch.id</a>
+      </div>
+      <div class="foot-col">
+        <h5>SOSIAL MEDIA</h5>
+        <a href="https://www.instagram.com/smkn1bws.official">Instagram</a>
+        <a href="https://www.facebook.com/smkn1bws.official">Facebook</a>
+        <a href="https://www.youtube.com/@smkn1bws.official">Youtube</a>
+      </div>
+      <div class="foot-col">
+        <h5>PROGRAM KEAHLIAN</h5>
+        <a href="#">Akuntansi</a>
+        <a href="#">Bisnis Digital</a>
+        <a href="#">Desain Komunikasi Visual</a>
+        <a href="#">Layanan Perbankan</a>
+        <a href="#">Menejemen Perkantoran</a>
+        <a href="#">Produksi Siaran Program Televisi</a>
+        <a href="#">Rekayasa Perangkat Lunak</a>
+        <a href="#">Teknik Komputer Dan Jaringan</a>
+      </div>
+      <div class="foot-col">
+        <h5>LAINNYA</h5>
+        <a href="https://smk1bws.sch.id/berita">Event Terkini</a>
+        <a href="#">Dokumentasi</a>
+        <a href="#">Struktur Organisasi</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 TimHumas – SMKN 1 Bondowoso. Hak cipta dilindungi.</span>
+      <span><a href="#">Kebijakan Privasi</a> · <a href="#">Syarat &amp; Ketentuan</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
