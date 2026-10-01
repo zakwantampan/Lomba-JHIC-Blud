@@ -56,245 +56,12 @@ section {
 }
 
 /* ==========================================================================
-   KEYFRAME ANIMATIONS
-   ========================================================================== */
-@keyframes floatCart {
-
-  0%,
-  100% {
-    transform: rotate(15deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(18deg) translateY(-16px);
-  }
-}
-
-@keyframes floatTrolley {
-
-  0%,
-  100% {
-    transform: rotate(18deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(22deg) translateY(-12px);
-  }
-}
-
-@keyframes floatWatch {
-
-  0%,
-  100% {
-    transform: rotate(-20deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(-16deg) translateY(10px);
-  }
-}
-
-@keyframes floatPackage {
-
-  0%,
-  100% {
-    transform: rotate(-15deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(-11deg) translateY(-12px);
-  }
-}
-
-@keyframes floatBox {
-
-  0%,
-  100% {
-    transform: rotate(15deg) translateY(0);
-  }
-
-  50% {
-    transform: rotate(19deg) translateY(12px);
-  }
-}
-
-@keyframes pulseStar {
-
-  0%,
-  100% {
-    transform: scale(1) rotate(0deg);
-    filter: drop-shadow(0 0 0 rgba(255, 195, 0, 0));
-  }
-
-  50% {
-    transform: scale(1.15) rotate(6deg);
-    filter: drop-shadow(0 0 16px rgba(255, 195, 0, 0.6));
-  }
-}
-
-@keyframes gentlePulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.06);
-  }
-}
-
-@keyframes floatWhyIcon {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-@keyframes floatStatIconA {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-7px) scale(1.05);
-  }
-}
-
-@keyframes floatStatIconB {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-7px) rotate(6deg);
-  }
-}
-
-@keyframes floatStatIconC {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-7px) scale(1.05);
-  }
-}
-
-@keyframes floatStatIconD {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-7px) rotate(-6deg);
-  }
-}
-
-@keyframes floatStatBigGraph {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.04);
-  }
-}
-
-@keyframes floatBurstLeft {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-4deg) scale(1.06);
-  }
-}
-
-@keyframes floatBurstRight {
-  0%, 100% {
-    transform: scaleX(-1) translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: scaleX(-1) translateY(-10px) rotate(-4deg) scale(1.06);
-  }
-}
-
-@keyframes floatTrophyLeft {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(-6deg);
-  }
-}
-
-@keyframes floatTrophyRight {
-  0%, 100% {
-    transform: scaleX(-1) translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: scaleX(-1) translateY(-12px) rotate(-6deg);
-  }
-}
-
-@keyframes floatCelebrationLeft {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) rotate(6deg) scale(1.08);
-  }
-}
-
-@keyframes floatCelebrationRight {
-  0%, 100% {
-    transform: scaleX(-1) translateY(0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: scaleX(-1) translateY(-10px) rotate(6deg) scale(1.08);
-  }
-}
-
-@keyframes chevronNudgeLeft {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-8px);
-  }
-}
-
-@keyframes chevronNudgeRight {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(8px);
-  }
-}
-
-@keyframes sendNudge {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(3px, -3px);
-  }
-}
-
-@keyframes heroArtFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* ==========================================================================
    SCROLL REVEAL UTILITIES
    ========================================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   will-change: opacity, transform;
 }
 
@@ -378,7 +145,6 @@ section {
   width: 58px;
   height: auto;
   pointer-events: none;
-  animation: gentlePulse 6s ease-in-out infinite;
 }
 
 .brand {
@@ -414,7 +180,6 @@ section {
   width: 74px;
   height: auto;
   pointer-events: none;
-  animation: gentlePulse 6s ease-in-out infinite 0.5s;
 }
 
 .brand-text {
@@ -536,7 +301,6 @@ section {
   max-width: 520px;
   height: auto;
   object-fit: contain;
-  animation: heroArtFloat 5.5s ease-in-out infinite;
 }
 
 .hero-deco-wrap {
@@ -552,7 +316,6 @@ section {
   width: 130px;
   height: auto;
   display: block;
-  animation: gentlePulse 5s ease-in-out infinite;
 }
 
 .eyebrow {
@@ -653,21 +416,6 @@ section {
   object-fit: contain;
 }
 
-.kartu-mengapa:nth-child(1) .ikon-mengapa img,
-.why-card:nth-child(1) .why-icon img {
-  animation: floatWhyIcon 3.4s ease-in-out infinite;
-}
-
-.kartu-mengapa:nth-child(2) .ikon-mengapa img,
-.why-card:nth-child(2) .why-icon img {
-  animation: floatWhyIcon 3.4s ease-in-out infinite 0.6s;
-}
-
-.kartu-mengapa:nth-child(3) .ikon-mengapa img,
-.why-card:nth-child(3) .why-icon img {
-  animation: floatWhyIcon 3.4s ease-in-out infinite 1.2s;
-}
-
 .kartu-mengapa h3,
 .why-card h3 {
   font-size: 19px;
@@ -702,7 +450,7 @@ section {
   width: 150px;
   height: auto;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
-  animation: floatCart 4.5s ease-in-out infinite;
+  transform: rotate(15deg);
 }
 
 /* ==========================================================================
@@ -1024,28 +772,11 @@ section {
   flex-shrink: 0;
 }
 
-.stats-grid .stat-box:nth-child(1) .stat-icon-img {
-  animation: floatStatIconA 3.6s ease-in-out infinite;
-}
-
-.stats-grid .stat-box:nth-child(2) .stat-icon-img {
-  animation: floatStatIconB 4s ease-in-out infinite 0.5s;
-}
-
-.stats-grid .stat-box:nth-child(3) .stat-icon-img {
-  animation: floatStatIconC 3.8s ease-in-out infinite 1s;
-}
-
-.stats-grid .stat-box:nth-child(4) .stat-icon-img {
-  animation: floatStatIconD 4.2s ease-in-out infinite 1.5s;
-}
-
 .stat-icon-img-big {
   width: clamp(80px, 11vw, 155px);
   height: clamp(80px, 11vw, 155px);
   object-fit: contain;
   flex-shrink: 0;
-  animation: floatStatBigGraph 4.5s ease-in-out infinite;
 }
 
 .stat-box.big {
@@ -1135,28 +866,28 @@ section {
   left: 2.5%;
   top: 5%;
   width: clamp(48px, 7.5vw, 120px);
-  animation: floatTrolley 5s ease-in-out infinite;
+  transform: rotate(18deg);
 }
 
 .deco-watch {
   right: 2.5%;
   top: 5%;
   width: clamp(44px, 7vw, 110px);
-  animation: floatWatch 4.5s ease-in-out infinite 0.4s;
+  transform: rotate(-20deg);
 }
 
 .deco-package {
   left: 2%;
   bottom: 0px;
   width: clamp(46px, 7.2vw, 115px);
-  animation: floatPackage 4.8s ease-in-out infinite 0.8s;
+  transform: rotate(-15deg);
 }
 
 .deco-box {
   right: 2%;
   bottom: 5px;
   width: clamp(44px, 7vw, 112px);
-  animation: floatBox 5.2s ease-in-out infinite 1.2s;
+  transform: rotate(15deg);
 }
 
 .school-curve {
@@ -1197,12 +928,11 @@ section {
 .visi-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: clamp(36px, 6vw, 95px) clamp(16px, 4vw, 56px);
   position: relative;
   max-width: var(--maxw);
   margin: 0 auto;
-  gap: clamp(14px, 3vw, 50px);
 }
 
 .visi-content {
@@ -1227,34 +957,7 @@ section {
   line-height: 1.65;
   font-weight: 600;
   color: var(--text);
-  margin: 0 0 clamp(18px, 3vw, 30px);
-}
-
-.visi-star {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.visi-star img {
-  width: clamp(44px, 5.5vw, 78px);
-  height: auto;
-  animation: pulseStar 3s ease-in-out infinite;
-}
-
-.visi-burst {
-  width: clamp(40px, 7vw, 125px);
-  height: auto;
-  flex-shrink: 0;
-}
-
-.burst-left {
-  animation: floatBurstLeft 4.2s ease-in-out infinite;
-}
-
-.burst-right {
-  transform: scaleX(-1);
-  animation: floatBurstRight 4.2s ease-in-out infinite 0.5s;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -1301,42 +1004,6 @@ section {
   object-fit: contain;
 }
 
-/* Title icon floating animations */
-.pencapaian .ikon-kiri,
-.pencapaian .title-icon.icon-left {
-  animation: floatTrophyLeft 4s ease-in-out infinite;
-}
-.pencapaian .ikon-kanan,
-.pencapaian .title-icon.icon-right {
-  animation: floatTrophyRight 4s ease-in-out infinite;
-}
-
-.kontak-title-wrap .ikon-kiri,
-.kontak-title-wrap .title-icon.icon-left {
-  animation: floatCelebrationLeft 3.6s ease-in-out infinite;
-}
-.kontak-title-wrap .ikon-kanan,
-.kontak-title-wrap .title-icon.icon-right {
-  animation: floatCelebrationRight 3.6s ease-in-out infinite;
-}
-
-.form-title-wrap .ikon-kiri,
-.form-title-wrap .title-icon.icon-left {
-  animation: floatBurstLeft 3.5s ease-in-out infinite;
-}
-.form-title-wrap .ikon-kanan,
-.form-title-wrap .title-icon.icon-right {
-  animation: floatBurstRight 3.5s ease-in-out infinite;
-}
-
-.lokasi-title-wrap .chevron-icon.ikon-kiri,
-.lokasi-title-wrap .chevron-icon.icon-left {
-  animation: chevronNudgeLeft 2.4s ease-in-out infinite;
-}
-.lokasi-title-wrap .chevron-icon.ikon-kanan,
-.lokasi-title-wrap .chevron-icon.icon-right {
-  animation: chevronNudgeRight 2.4s ease-in-out infinite;
-}
 
 .pencapaian {
   padding: clamp(40px, 5.5vw, 70px) 0 clamp(45px, 6vw, 80px);
@@ -1436,7 +1103,7 @@ section {
 }
 
 .cta-banner {
-  background: var(--secondary); 
+  background: var(--secondary);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1463,7 +1130,6 @@ section {
   position: relative;
   flex-shrink: 0;
   margin: 0 auto;
-  animation: floatUpDown 2.8s ease-in-out infinite;
 }
 
 .cta-mail-img {
@@ -1495,17 +1161,8 @@ section {
   margin: 0;
   font-size: clamp(24px, 3.6vw, 44px);
   font-weight: 800;
-  color: var(--secondary); 
+  color: var(--secondary);
   line-height: 1.25;
-}
-
-@keyframes floatUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
 }
 
 .form-section {
@@ -1547,7 +1204,8 @@ section {
   border-radius: 100px;
   padding: 14px 20px;
   font-family: inherit;
-  font-size: 16px; /* 16px prevents iOS Safari auto-zooming on focus */
+  font-size: 16px;
+  /* 16px prevents iOS Safari auto-zooming on focus */
   background: var(--bg);
   color: var(--text);
   outline: none;
@@ -1601,7 +1259,11 @@ section {
   width: 18px;
   height: auto;
   display: block;
-  animation: sendNudge 2.2s ease-in-out infinite;
+  transition: transform 0.25s ease;
+}
+
+.btn-primary:hover .btn-send-img {
+  transform: translate(3px, -3px);
 }
 
 .btn-primary.loading {
@@ -1740,13 +1402,19 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .foot-badge img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.foot-badge img:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 6px 20px rgba(255, 140, 0, 0.3));
 }
 
 .foot-top h3 {
@@ -1764,6 +1432,105 @@ footer {
   color: #A9A9A9;
   margin: 0;
   font-size: clamp(13.5px, 1.5vw, 15px);
+}
+
+/* ==========================================================================
+   PENYELENGGARA & PENDUKUNG LOMBA (STRIP LOGO MINIMALIS & SEAMLESS)
+   ========================================================================== */
+.lomba-strip {
+  max-width: var(--maxw);
+  margin: 0 auto clamp(28px, 4vw, 44px);
+  text-align: center;
+}
+
+.lomba-strip-label {
+  font-size: clamp(11.5px, 1.2vw, 13px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8E8E8E;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.lomba-strip-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 2.8vw, 36px);
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.lomba-main-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lomba-main-logo img.logo-jhic {
+  max-height: clamp(56px, 6vw, 70px);
+  max-width: clamp(130px, 15vw, 175px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 14px rgba(255, 107, 0, 0.25));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.lomba-main-logo img.logo-jhic:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 6px 20px rgba(255, 107, 0, 0.45));
+}
+
+.lomba-divider {
+  width: 1px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.lomba-supporters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.5vw, 30px);
+  flex-wrap: wrap;
+}
+
+.lomba-supporters img {
+  max-height: clamp(24px, 2.4vw, 30px);
+  max-width: clamp(75px, 10vw, 130px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+}
+
+.lomba-supporters img[alt="Jagoan Hosting"] {
+  max-height: clamp(23px, 2.3vw, 28px);
+}
+
+.lomba-supporters img[alt="KOMDIGI"] {
+  max-height: clamp(26px, 2.7vw, 32px);
+}
+
+.lomba-supporters img[alt="Garuda Spark"] {
+  max-height: clamp(27px, 2.8vw, 33px);
+}
+
+.lomba-supporters img[alt="Ngalup.co"] {
+  max-height: clamp(17px, 1.8vw, 21px);
+  max-width: clamp(90px, 12vw, 145px);
+}
+
+.lomba-supporters img:hover {
+  opacity: 1;
+  transform: scale(1.06);
+  filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.25));
 }
 
 .foot-grid {
@@ -1845,9 +1612,6 @@ footer {
     bottom: -10px;
   }
 
-  .visi-burst {
-    width: 65px;
-  }
 
   .floating-cart-deco {
     left: -5px;
@@ -1933,6 +1697,23 @@ footer {
 
   .floating-cart-deco {
     display: none;
+  }
+
+  .lomba-strip-wrap {
+    gap: 16px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .lomba-divider {
+    width: 60px;
+    height: 1px;
+    margin: 2px auto;
+  }
+
+  .lomba-supporters {
+    gap: 16px 24px;
   }
 
   .foot-grid {
@@ -2208,9 +1989,6 @@ footer {
     opacity: 0.55;
   }
 
-  .visi-burst {
-    width: 36px;
-  }
 
   .cta-icon-box {
     width: 110px;
@@ -2229,6 +2007,32 @@ footer {
   .btn-primary {
     width: 100%;
     justify-content: center;
+  }
+
+  .lomba-strip {
+    margin-bottom: 28px;
+  }
+
+  .lomba-strip-wrap {
+    gap: 14px;
+    width: 100%;
+  }
+
+  .lomba-main-logo img.logo-jhic {
+    max-height: 48px;
+  }
+
+  .lomba-supporters {
+    gap: 12px 18px;
+  }
+
+  .lomba-supporters img {
+    max-height: 22px;
+    max-width: 90px;
+  }
+
+  .lomba-supporters img[alt="Ngalup.co"] {
+    max-height: 17px;
   }
 
   .foot-grid {
@@ -2284,7 +2088,24 @@ footer {
     gap: 8px;
   }
 
-  .visi-burst {
-    display: none;
+  .lomba-strip-wrap {
+    gap: 12px;
+  }
+
+  .lomba-main-logo img.logo-jhic {
+    max-height: 42px;
+  }
+
+  .lomba-supporters {
+    gap: 10px 14px;
+  }
+
+  .lomba-supporters img {
+    max-height: 19px;
+    max-width: 75px;
+  }
+
+  .lomba-supporters img[alt="Ngalup.co"] {
+    max-height: 15px;
   }
 }
