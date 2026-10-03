@@ -8,6 +8,29 @@
 // Ganti ke URL backend production sebelum deploy.
 const API_BASE = "http://localhost:8000/api";
 
+// Alamat file upload (gambar/logo) — otomatis ikut API_BASE, tidak perlu
+// diganti manual saat deploy.
+const STORAGE_BASE = API_BASE.replace(/\/api\/?$/, "") + "/storage";
+
+// Respons list bisa berupa array langsung, { data: [...] }, atau hasil
+// paginate Laravel ({ data: [...], current_page, ... }). Semuanya jadi array.
+function toList(json) {
+  if (Array.isArray(json)) return json;
+  if (json && Array.isArray(json.data)) return json.data;
+  return [];
+}
+
+// Cegah teks dari database merusak HTML (innerHTML).
+function escapeHtml(value) {
+  return String(value ?? "").replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
+  );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
   initProductsSlider();
@@ -147,7 +170,7 @@ function loadDynamicProducts() {
           .slice(0, 8) // Limit 8 produk
           .map((product) => {
             const imageUrl = product.gambar
-              ? `http://localhost:8000/storage/${product.gambar}`
+              ? `${STORAGE_BASE}/${product.gambar}`
               : "images/produk-1.png";
             return `
           <div class="product-card">
@@ -176,22 +199,31 @@ function loadDynamicPencapaian() {
   fetch(`${API_BASE}/pencapaian/public`, {
     headers: { Accept: "application/json" },
   })
-    .then((res) => res.json())
-    .catch(() => [])
-    .then((pencapaian) => {
+    .then((res) => {
+      if (!res.ok) throw new Error(`Pencapaian: server ${res.status}`);
+      return res.json();
+    })
+    .then((json) => {
+      const pencapaian = toList(json);
       const gridCapai = document.querySelector(".grid-capai");
+      // Data kosong / gagal dimuat: biarkan kartu statis di HTML tetap tampil.
       if (!gridCapai || !pencapaian.length) return;
 
-      // Map warna untuk setiap jurusan
-      const jurusanColors = {
-        BD: "#E23B2E",
-        PSPTV: "#1D5FBF",
-        LP: "#2E9E4A",
-        RPL: "#9016aeac",
-        AKL: "#009a27af",
-        DKV: "#ff6a00",
-        TKJ: "#646464",
-        MP: "#fff200",
+      // Kode, nama lengkap, warna, dan kata kunci pencocokan tiap jurusan.
+      // jurusan_terkait dari database boleh berupa kode ("BD") ataupun nama
+ 
+      const cariJurusan = (raw) => {
+        const v = String(raw ?? "")
+          .trim()
+          .toLowerCase();
+        if (!v) return null;
+        return (
+          JURUSAN.find((j) => j.code.toLowerCase() === v) ||
+          JURUSAN.find((j) =>
+            j.keys.some((k) => k.length > 3 && v.includes(k)),
+          ) ||
+          null
+        );
       };
 
       const gradients = [
@@ -208,21 +240,26 @@ function loadDynamicPencapaian() {
       gridCapai.innerHTML = pencapaian
         .slice(0, 8)
         .map((item, idx) => {
-          const logoUrl = item.logo_mitra
-            ? `http://localhost:8000/storage/${item.logo_mitra}`
-            : null;
-          const shortName = item.jurusan_terkait.slice(0, 2).toUpperCase();
-          const bgColor = jurusanColors[shortName] || "#666";
+          const jur = cariJurusan(item.jurusan_terkait);
+          const namaJurusan = jur
+            ? jur.nama
+            : String(item.jurusan_terkait ?? "").trim();
+          const tag = jur ? jur.code : namaJurusan.slice(0, 3).toUpperCase();
+          const bgColor = jur ? jur.color : "#666";
           const gradient = gradients[idx % gradients.length];
+          const namaMitra = escapeHtml(item.nama_mitra);
+          const logoUrl = item.logo_mitra
+            ? `${STORAGE_BASE}/${item.logo_mitra}`
+            : null;
 
           return `
         <div class="kartu-capai reveal ${idx < 2 ? "delay-" + (idx + 1) : ""}">
           <div class="info-capai">
-            <h4>${item.jurusan_terkait} menjalin kerja sama dengan ${item.nama_mitra}</h4>
-            <span class="tag-capai" style="background:${bgColor};">${shortName}</span>
+            <h4>${namaJurusan ? "Jurusan " + escapeHtml(namaJurusan) + " menjalin" : "Menjalin"} kerja sama dengan ${namaMitra}</h4>
+            <span class="tag-capai" style="background:${bgColor};">${escapeHtml(tag)}</span>
           </div>
           <div class="media-capai" style="background:${gradient};">
-            ${logoUrl ? `<img src="${logoUrl}" alt="${item.nama_mitra}" style="object-fit:cover;" onerror="this.style.display='none';">` : ""}
+            ${logoUrl ? `<img src="${escapeHtml(logoUrl)}" alt="${namaMitra}" style="object-fit:cover;" onerror="this.style.display='none';">` : ""}
           </div>
         </div>
       `;
@@ -231,6 +268,10 @@ function loadDynamicPencapaian() {
 
       // Trigger scroll reveal untuk elemen baru
       initScrollReveal();
+    })
+    .catch((err) => {
+      // Gagal memuat: kartu statis di HTML tetap dipakai.
+      console.warn("Gagal memuat pencapaian:", err);
     });
 }
 
