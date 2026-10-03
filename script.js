@@ -211,7 +211,58 @@ function loadDynamicPencapaian() {
 
       // Kode, nama lengkap, warna, dan kata kunci pencocokan tiap jurusan.
       // jurusan_terkait dari database boleh berupa kode ("BD") ataupun nama
- 
+      // lengkap ("Bisnis Digital") — keduanya dikenali.
+      const JURUSAN = [
+        {
+          code: "BD",
+          nama: "Bisnis Digital",
+          color: "#E23B2E",
+          keys: ["bisnis digital", "bd"],
+        },
+        {
+          code: "PSPTV",
+          nama: "Produksi dan Siaran Program Televisi",
+          color: "#1D5FBF",
+          keys: ["siaran program", "psptv", "televisi"],
+        },
+        {
+          code: "LP",
+          nama: "Layanan Perbankan",
+          color: "#2E9E4A",
+          keys: ["perbankan", "lp"],
+        },
+        {
+          code: "RPL",
+          nama: "Rekayasa Perangkat Lunak",
+          color: "#9016aeac",
+          keys: ["rekayasa perangkat lunak", "rpl"],
+        },
+        {
+          code: "AKL",
+          nama: "Akuntansi dan Keuangan Lembaga",
+          color: "#009a27af",
+          keys: ["akuntansi", "akl"],
+        },
+        {
+          code: "DKV",
+          nama: "Desain Komunikasi Visual",
+          color: "#ff6a00",
+          keys: ["desain komunikasi visual", "dkv"],
+        },
+        {
+          code: "TKJ",
+          nama: "Teknik Komputer dan Jaringan",
+          color: "#646464",
+          keys: ["komputer dan jaringan", "tkj"],
+        },
+        {
+          code: "MP",
+          nama: "Manajemen Perkantoran",
+          color: "#fff200",
+          keys: ["perkantoran", "mp"],
+        },
+      ];
+
       const cariJurusan = (raw) => {
         const v = String(raw ?? "")
           .trim()
