@@ -33,7 +33,10 @@ function escapeHtml(value) {
 
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
-  initProductsSlider();
+  // initProductsSlider() SENGAJA tidak dipanggil di sini — dipanggil
+  // persis SEKALI dari dalam loadDynamicProducts() di bawah (baik lewat
+  // data API maupun fallback kartu statis), supaya listener tombol
+  // next/prev tidak ke-attach dua kali.
   loadDynamicStats();
   loadDynamicProducts();
   loadDynamicPencapaian();
@@ -132,20 +135,22 @@ function loadDynamicStats() {
       const statBoxes = document.querySelectorAll(".stat-box .stat-num");
       if (statBoxes.length >= 5) {
         // Urutan sesuai di HTML: jumlah_client, produk_jasa, siswa_terlibat, jurusan_terlibat, project
-        statBoxes[0].textContent = stats.jumlah_client || "100";
-        statBoxes[0].setAttribute("data-target", stats.jumlah_client || "100");
+        // Pakai ?? (bukan ||) — kalau angka aslinya 0, itu harus tetap
+        // tampil "0", bukan jatuh ke fallback karena 0 dianggap falsy.
+        statBoxes[0].textContent = stats.jumlah_client ?? "100";
+        statBoxes[0].setAttribute("data-target", stats.jumlah_client ?? "100");
 
-        statBoxes[1].textContent = stats.produk_jasa || "53";
-        statBoxes[1].setAttribute("data-target", stats.produk_jasa || "53");
+        statBoxes[1].textContent = stats.produk_jasa ?? "53";
+        statBoxes[1].setAttribute("data-target", stats.produk_jasa ?? "53");
 
-        statBoxes[2].textContent = stats.siswa_terlibat || "100";
-        statBoxes[2].setAttribute("data-target", stats.siswa_terlibat || "100");
+        statBoxes[2].textContent = stats.siswa_terlibat ?? "100";
+        statBoxes[2].setAttribute("data-target", stats.siswa_terlibat ?? "100");
 
-        statBoxes[3].textContent = stats.jurusan_terlibat || "8";
-        statBoxes[3].setAttribute("data-target", stats.jurusan_terlibat || "8");
+        statBoxes[3].textContent = stats.jurusan_terlibat ?? "8";
+        statBoxes[3].setAttribute("data-target", stats.jurusan_terlibat ?? "8");
 
-        statBoxes[4].textContent = stats.project || "100";
-        statBoxes[4].setAttribute("data-target", stats.project || "100");
+        statBoxes[4].textContent = stats.project ?? "100";
+        statBoxes[4].setAttribute("data-target", stats.project ?? "100");
       }
       initStatsCounter();
     });
@@ -162,9 +167,14 @@ function loadDynamicProducts() {
     .catch(() => [])
     .then((products) => {
       const row = document.getElementById("productsRow");
-      if (!row) return;
+      if (!row) {
+        initProductsSlider(); // jaga-jaga, walau row tidak ada ini no-op
+        return;
+      }
 
-      // Jika ada data dari API, timpa konten default dengan data dari DB
+      // Jika ada data dari API, timpa konten default dengan data dari DB.
+      // Kalau API kosong/gagal, row.innerHTML dibiarkan apa adanya
+      // (kartu statis di index.html tetap dipakai).
       if (products.length > 0) {
         row.innerHTML = products
           .slice(0, 8) // Limit 8 produk
@@ -172,23 +182,27 @@ function loadDynamicProducts() {
             const imageUrl = product.gambar
               ? `${STORAGE_BASE}/${product.gambar}`
               : "images/produk-1.png";
+            const namaProduk = escapeHtml(product.nama_produk);
+            const deskripsi = escapeHtml(product.deskripsi);
             return `
           <div class="product-card">
             <div class="product-media">
-              <img src="${imageUrl}" alt="${product.nama_produk}" onerror="this.src='images/produk-1.png'">
+              <img src="${escapeHtml(imageUrl)}" alt="${namaProduk}" onerror="this.src='images/produk-1.png'">
             </div>
             <div class="product-body">
-              <h3>${product.nama_produk}</h3>
-              <p>${product.deskripsi}</p>
+              <h3>${namaProduk}</h3>
+              <p>${deskripsi}</p>
             </div>
           </div>
         `;
           })
           .join("");
-
-        // Re-init slider setelah DOM berubah
-        setTimeout(() => initProductsSlider(), 0);
       }
+
+      // Dipanggil PERSIS SEKALI di sini, baik row.innerHTML barusan diganti
+      // data API (di atas) maupun masih kartu statis bawaan HTML (kalau
+      // products kosong/API gagal) — row sudah final di titik ini.
+      initProductsSlider();
     });
 }
 
